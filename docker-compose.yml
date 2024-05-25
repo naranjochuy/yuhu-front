@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  yuhu-front:
+    container_name: front
+    build:
+      context: .
+    platform: linux/x86_64
+    volumes:
+      - .:/code:rw
+    ports:
+      - 8888:8888
+    networks:
+      - yuhu
+
+networks:
+  yuhu:
+    external: true
